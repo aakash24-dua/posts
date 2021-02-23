@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Movie</string>
+    <string name="search_hint">Enter a title</string>
+    <string name="recent_items">Recent Items</string>
+    <string name="movie_list">Movie List</string>
+    <string name="no_records_found">No records found. try again</string>
+
+</resources>
