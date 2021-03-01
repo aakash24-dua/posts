@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.movie.App
 import com.example.movie.ui.movieDetail.model.MovieDetailsResponse
+import com.example.movie.ui.movieDetail.model.PostDataResponse
 import com.example.movie.utils.NetworkService
 import io.reactivex.subjects.PublishSubject
 import kotlinx.coroutines.Dispatchers
@@ -17,10 +18,10 @@ class MovieDetailViewmodel : ViewModel() {
 
     @Inject
     lateinit var service: NetworkService
-    var publishObject = PublishSubject.create<MovieDetailsResponse>()
+    var publishObject = PublishSubject.create<PostDataResponse>()
 
 
-    suspend fun getDetails(id: String): MovieDetailsResponse? {
+    suspend fun getDetails(id: String): PostDataResponse? {
         try {
             val data = viewModelScope.async(Dispatchers.IO) {
                 service.getMovieDetails(id)
@@ -52,7 +53,7 @@ class MovieDetailViewmodel : ViewModel() {
 
     }
 
-    private fun updateData(it: MovieDetailsResponse) {
+    private fun updateData(it: PostDataResponse) {
 
 
         publishObject.onNext(it )
