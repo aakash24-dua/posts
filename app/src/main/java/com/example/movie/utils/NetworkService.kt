@@ -35,7 +35,7 @@ class NetworkService {
         retrofit.create(SearchApi::class.java)
     }
 
-    suspend fun getMovieList( search:String,page: Int) = searchApi.getMovieList(search,page)
-    suspend fun getMovieDetails( id: String) = searchApi.getMovieDetails(id)
+    suspend fun getList() = searchApi.getPostList()
+    suspend fun getDetails( id: String) = searchApi.getPostDetails(id)
 
 }

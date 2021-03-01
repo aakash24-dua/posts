@@ -14,41 +14,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:id="@+id/frame"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_height="@dimen/_200sdp">
-
-            <ImageView
-                android:id="@+id/item_image_view"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_200sdp"
-                android:scaleType="fitXY"
-                android:background="@drawable/ic_launcher_background"
-                tools:src="@drawable/ic_launcher_background" />
-
-                <ImageView
-                    android:id="@+id/play_circle"
-                    android:layout_width="@dimen/_44sdp"
-                    android:layout_height="@dimen/_44sdp"
-                    android:scaleType="fitXY"
-                    android:padding="@dimen/_4sdp"
-                    android:tint="@color/app_divider_on_white"
-                    android:layout_gravity="end|bottom"
-                    app:srcCompat="@drawable/ic_play_circle"
-                    android:background="@drawable/image_shadow"
-                    tools:src="@drawable/ic_launcher_background" />
-
-
-            </FrameLayout>
 
             <View
                 android:id="@+id/line_view"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@android:color/black"
-                app:layout_constraintTop_toBottomOf="@id/frame" />
+                tools:ignore="MissingConstraints" />
 
             <TextView
                 android:id="@+id/item_category_txt"
@@ -67,19 +39,17 @@
                 android:layout_width="0dp"
                 android:gravity="center|start"
                 android:drawablePadding="@dimen/_2sdp"
-                android:drawableLeft="@drawable/ic_schedule"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_10sdp"
                 app:layout_constraintLeft_toRightOf="@id/item_category_txt"
                 app:layout_constraintRight_toLeftOf="@id/item_rating_txt"
                 app:layout_constraintTop_toBottomOf="@id/line_view"
-                tools:text="2h 10m" />
+                tools:text="Email" />
 
             <TextView
                 android:id="@+id/item_rating_txt"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_stars"
                 android:gravity="center|start"
                 android:drawablePadding="@dimen/_2sdp"
                 android:layout_marginTop="@dimen/_10sdp"
@@ -94,7 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_10sdp"
-                android:text="Synopsis"
+                android:text="User Name"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@id/item_synopsis_desc"
                 app:layout_constraintTop_toBottomOf="@id/item_category_txt" />
@@ -116,9 +86,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="center|start"
                 android:drawablePadding="@dimen/_2sdp"
-                android:drawableLeft="@drawable/ic_thumb_up"
                 android:layout_margin="@dimen/_10sdp"
-                android:text="Score"
+                android:text="Website"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@id/item_reviews_txt"
@@ -129,10 +98,9 @@
                 android:layout_width="0dp"
                 android:gravity="center|start"
                 android:drawablePadding="@dimen/_2sdp"
-                android:drawableLeft="@drawable/ic_rate_review"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_10sdp"
-                android:text="Reviews"
+                android:text="Address"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toRightOf="@id/item_score_txt"
                 app:layout_constraintRight_toLeftOf="@id/item_rating_txt"
@@ -143,10 +111,9 @@
                 android:layout_width="0dp"
                 android:gravity="center|start"
                 android:drawablePadding="@dimen/_2sdp"
-                android:drawableLeft="@drawable/ic_thumb_up"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_10sdp"
-                android:text="Popularity"
+                android:text="Company"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toRightOf="@id/item_reviews_txt"
                 app:layout_constraintRight_toRightOf="parent"

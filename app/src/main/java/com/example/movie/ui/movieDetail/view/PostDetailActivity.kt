@@ -5,41 +5,38 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
-import com.bumptech.glide.Glide
 import com.example.movie.R
-import com.example.movie.ui.movieDetail.viewmodel.MovieDetailViewmodel
+import com.example.movie.ui.movieDetail.viewmodel.PostDetailViewmodel
 import kotlinx.android.synthetic.main.detail_view.*
 
-class MovieDetailActivity : AppCompatActivity() {
+class PostDetailActivity : AppCompatActivity() {
 
 
     private val viewModel by lazy {
-        ViewModelProviders.of(this).get(MovieDetailViewmodel::class.java)
+        ViewModelProviders.of(this).get(PostDetailViewmodel::class.java)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.detail_view)
-        title = "Movie Detail"
+        title = "Post Detail"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val id = intent.extras?.getInt("imdbId",0)
-        viewModel.getMovieDetails(id.toString()?:"")
+        viewModel.getMovieDetails(id.toString())
 
         viewModel.publishObject.subscribe ({
 
-            item_category_txt.text = it?.name?:""
-            item_duration_txt.text = it?.email?:""
-            item_rating_txt.text = it?.phone?:""
+            item_category_txt.text = "Name - ".plus(it?.name?:"")
+            item_duration_txt.text = "Email - ".plus(it?.email?:"")
+            item_rating_txt.text = "Mobile- ".plus(it?.phone?:"")
 
             item_synopsis_desc.text = it?.username?:""
             item_score_desc_txt.text = it?.website?:""
-            item_reviews_desc_txt.text = it?.address.toString()?:""
-            item_popularity_desc_txt.text = it?.company.toString()?:""
+            item_reviews_desc_txt.text = it?.address.toString()
+            item_popularity_desc_txt.text = it?.company.toString()
 
-            item_director_desc_view.text = it?.id.toString()?:""
-           // item_writer_desc_view.text = it?.?:""
-          //  item_actor_desc_view.text = it?.actors?:""
+            item_director_desc_view.text = it?.id.toString()
 
         },{
             Toast.makeText(this,"Error in response",Toast.LENGTH_LONG).show()

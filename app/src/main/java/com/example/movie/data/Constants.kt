@@ -2,7 +2,7 @@ package com.example.movie.data
 
 class Constants {
     companion object{
-      const val  baseURL = "http://www.omdbapi.com"
+      const val  baseURL = "https://jsonplaceholder.typicode.com"
     }
 
 

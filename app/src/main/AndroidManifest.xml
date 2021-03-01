@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.movie">
+    package="com.example.post">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -25,7 +25,7 @@
         </activity>
 
         <activity
-            android:name=".ui.movieDetail.view.MovieDetailActivity"
+            android:name=".ui.movieDetail.view.PostDetailActivity"
             android:configChanges="orientation"></activity>
     </application>
 
